@@ -172,4 +172,4 @@ cython_debug/
 
 # Folders
 outputs/
-scripts/
+data/
