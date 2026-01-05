@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 
 # Load dataset
-df = pd.read_csv("../data/engineered_student_engagement.csv")
+df = pd.read_csv("data/engineered_student_engagement.csv")
 
 # Define features and target
 X = df.drop(columns=["Engagement_Label"])
@@ -18,4 +18,4 @@ model = RandomForestClassifier(n_estimators=100, random_state=42)
 model.fit(X_train, y_train)
 
 # Save trained model
-joblib.dump(model, "../outputs/engagement_model.pkl")
+joblib.dump(model, "outputs/engagement_model.pkl")

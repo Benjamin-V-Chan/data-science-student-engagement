@@ -5,12 +5,12 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Load dataset
-df = pd.read_csv("../data/engineered_student_engagement.csv")
+df = pd.read_csv("data/engineered_student_engagement.csv")
 X = df.drop(columns=["Engagement_Label"])
 y = df["Engagement_Label"]
 
 # Load model
-model = joblib.load("../outputs/engagement_model.pkl")
+model = joblib.load("outputs/engagement_model.pkl")
 
 # Predictions
 y_pred = model.predict(X)
@@ -25,5 +25,5 @@ feature_names = X.columns
 plt.figure(figsize=(10, 6))
 sns.barplot(x=importances, y=feature_names)
 plt.title("Feature Importance")
-plt.savefig("../outputs/feature_importance.png")
+plt.savefig("outputs/feature_importance.png")
 plt.show()
